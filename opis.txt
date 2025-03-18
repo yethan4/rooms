@@ -1,0 +1,24 @@
+Część 1.
+  Algorytm, przechodząc przez kolejne etapy gry, sprawdza, czy dziecko znajduje się w jednym z docelowych pokojów na danym etapie.
+
+  Jeśli dziecko znajdzie się w docelowym pokoju, algorytm zapisuje numer pokoju (pokój X), krok schematu (schematId) oraz numer etapu gry (etap1).
+
+  Jeśli dziecko ponownie znajdzie się w pokoju X:
+    
+    * Jeśli schematId nie jest równy żadnemu z wcześniejszych, algorytm dodaje do pokoju X nowy schematId i etap1.
+    * Jeśli schematId jest równy któremuś z wcześniej znalezionych, algorytm uzupełnia dane dla tego schematuId, dodając kolejny numer etapu gry (etap2).
+      ** Jeśli między etap1 a etap2 nie było żadnych innych schematówId, dziecko przestaje być liczone i zostaje uznane za "osiągnięte".
+      ** Jeśli między etap1 a etap2 były inne schematyId, algorytm kończy ich analizę w podobny sposób, a następnie również uznaje dziecko za "osiągnięte".
+
+  Te kroki są powtarzane dla każdego dziecka.
+
+Pętla jest ograniczona do 1 000 000 etapów gry, ponieważ analiza plików wskazuje, że jeśli program nie znajdzie odpowiedniego wzorca do tego momentu, prawdopodobnie nie znajdzie go w czasie krótszym niż 5 sekund. Dodatkowo algorytm zapisuje każdy różny napotkany stan gry, aby umożliwić wykrycie potencjalnego zapętlenia.
+
+Część 2.
+  Algorytm sprawdza, który schematId wystąpił dokładnie n (liczba dzieci) razy. Jeśli dany schematId nie wystąpił n razy, nie jest brany pod uwagę.
+  Następnie, w pętli, algorytm przechodzi przez kolejne wyselekcjonowane schematyId oraz odpowiadające im dzieci, tworząc równania w postaci:
+  x ≡ etap1 mod (etap2 - etap1)
+  Algorytm rozwiązuje układ kongruencji. Jeśli uda się znaleźć rozwiązanie, program zwraca wynik. W przeciwnym razie, przechodzi do kolejnego schematuId, jeśli taki istnieje. Jeśli żaden schematId nie prowadzi do rozwiązania, program zwraca "NIE".
+
+
+
