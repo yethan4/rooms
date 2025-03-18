@@ -4,7 +4,7 @@ This is my solution to a discrete mathematics assignment from which I received 1
 
 The content of the task can be found in the file [rooms.pdf](https://github.com/yethan4/rooms/blob/main/pokoje.pdf) (in polish)
 
-An additional requirement was that the program for each file was to execute in about 5 seconds, and to get the maximum number of points you had to make a short description of your solution [opis.txt](https://github.com/yethan4/rooms/blob/main/opisPL.txt) (in polish)
+An additional requirement was that the program should execute within about 5 seconds for each file. If there was no solution, the program was supposed to output 'NIE'. To earn the maximum number of points, a short description of the solution had to be provided in the file [opis.txt](https://github.com/yethan4/rooms/blob/main/opisPL.txt) (in polish)
 
 # How did I deal with it?
 
